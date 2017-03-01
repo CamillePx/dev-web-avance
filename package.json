@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/CamillePx/dev-web-avance/issues"
   },
-  "homepage": "https://github.com/CamillePx/dev-web-avance#readme"
+  "homepage": "https://github.com/CamillePx/dev-web-avance#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.16.1"
+  }
 }
