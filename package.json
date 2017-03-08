@@ -4,6 +4,10 @@
   "description": "HEAJ Dev-Web-Avancé",
   "main": "index.js",
   "scripts": {
+    "eslint": "./node_modules/.bin/eslint src/** || exit 0",
+    "clean": "rmdir /s /q dist && mkdir dist",
+    "dev": "npm run eslint && npm run clean && webpack-dev-server --env=dev",
+    "build": "npm run eslint && rmdir /s /q dist && webpack --env=prod --progress --profile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +21,16 @@
   },
   "homepage": "https://github.com/CamillePx/dev-web-avance#readme",
   "devDependencies": {
+    "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
-    "eslint": "^3.16.1"
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.10",
+    "eslint": "^3.16.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^3.0.0"
+  },
+  "dependencies": {
+    "three": "^0.84.0"
   }
 }
