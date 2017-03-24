@@ -7,19 +7,24 @@ class Cube {
         this.init();
     }
     init() {
-        console.info("initCube");
         // Create cube
         const geometry = new THREE.BoxBufferGeometry( 50, 50, 50);
-        const material = new THREE.MeshBasicMaterial( { 
+        const material = new THREE.MeshLambertMaterial( { 
             color: this._color, 
         } );
         this._mesh = new THREE.Mesh( geometry, material );
-        console.info('init Cube', this._mesh);
         this._mesh.name = "cube";
+        this._mesh.position.x = Math.random() * -50;
+        this._mesh.position.y = Math.random() * 350;
+        this._mesh.position.z = Math.random() * 150;
     }
     
     get mesh(){
         return this._mesh;
+    }
+    
+    update(){
+        this._mesh.rotation.x += 0.01;
     }
 }
 
